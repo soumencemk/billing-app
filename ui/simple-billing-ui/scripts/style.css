@@ -1,0 +1,50 @@
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.legend li {
+    float: left;
+    margin-right: 10px
+}
+
+.legend span {
+    border: 1px solid #ccc;
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin: 2px
+}
+
+@include media-breakpoint-only(lg) {
+    column-count: 3
+} @include media-breakpoint-only(xl) {
+    column-count: 4
+} .all_pad {
+      padding: 50px 20px 20px
+  }
+
+.card:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2)
+}
+
+input:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2)
+}
+
+body {
+    font-family: 'monospace', sans-serif !important
+}

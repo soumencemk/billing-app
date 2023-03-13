@@ -1,0 +1,28 @@
+<mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="meterType">
+        <mat-header-cell *matHeaderCellDef> Meter Type </mat-header-cell>
+        <mat-cell *matCellDef="let element"><mat-icon fontIcon="{{element.meterType | lowercase}}_meter"></mat-icon>
+            {{element.meterType}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="meterReadingValue">
+        <mat-header-cell *matHeaderCellDef> Reading </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.meterReadingValue}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="submitDate">
+        <mat-header-cell *matHeaderCellDef> Submit date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.submitDate | date}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="startingReading">
+        <mat-header-cell *matHeaderCellDef> Start Reading</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <p *ngIf="element.startingReading"><mat-icon>check_circle</mat-icon></p>
+        </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<button mat-raised-button>NEW <mat-icon fontIcon="add"></mat-icon> </button>

@@ -1,0 +1,21 @@
+docker run -d --name soumen_billing_app -e POSTGRES_URL=jdbc:postgresql://10.95.31.65:5432/simple-billing -e POSTGRES_USERNAME=soumen -e POSTGRES_PASSWORD=admin123 -p "9191:8080" itssoumen/simple-billing
+
+
+
+docker cp 29:/dump/dbexport.pgsql ./dbexport.pgsql
+
+
+
+docker run --name soumen_local_pg -e POSTGRES_USER=soumen -e POSTGRES_PASSWORD=system123 POSTGRES_DB="simple-billing" -p 5432:5432 -d postgres
+
+
+
+
+postgres://gnwkfuic:4Yq7xq7P1ZaI4OdVVqkJI5_kQfCGKYZe@dumbo.db.elephantsql.com/gnwkfuic
+
+
+
+Run local : 
+docker run -d --name soumen_billing_app -e POSTGRES_URL=jdbc:postgresql://dumbo.db.elephantsql.com/gnwkfuic -e POSTGRES_USERNAME=gnwkfuic -e POSTGRES_PASSWORD=4Yq7xq7P1ZaI4OdVVqkJI5_kQfCGKYZe -p "9191:8080" itssoumen/simple-billing
+
+docker run -d -p "7171:80" docker.io/itssoumen/simple-billing-ui:latest

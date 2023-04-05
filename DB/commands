@@ -28,3 +28,6 @@ docker exec <container_name> pg_dump <schema_name> > backup
 The following command will dump only inserts from all tables:
 
 docker exec <container_name> pg_dump --column-inserts --data-only  <schema_name> > inserts.sql
+
+
+ssh -qtt validator-tests 'docker exec postgres_db_1 pg_dump -U soumen -F t simple-billing' > db_bkp_$(date +%Y-%m-%d).bkp

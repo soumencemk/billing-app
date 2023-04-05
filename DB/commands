@@ -19,3 +19,12 @@ Run local :
 docker run -d --name soumen_billing_app -e POSTGRES_URL=jdbc:postgresql://dumbo.db.elephantsql.com/gnwkfuic -e POSTGRES_USERNAME=gnwkfuic -e POSTGRES_PASSWORD=4Yq7xq7P1ZaI4OdVVqkJI5_kQfCGKYZe -p "9191:8080" itssoumen/simple-billing
 
 docker run -d -p "7171:80" docker.io/itssoumen/simple-billing-ui:latest
+
+
+DUMP
+Use the following command from a UNIX or a Windows terminal:
+
+docker exec <container_name> pg_dump <schema_name> > backup
+The following command will dump only inserts from all tables:
+
+docker exec <container_name> pg_dump --column-inserts --data-only  <schema_name> > inserts.sql

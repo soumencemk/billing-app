@@ -1,17 +1,15 @@
 package com.soumen.simplebilling.entity;
 
 import com.soumen.simplebilling.model.MeterType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document
 @Data
 public class Rates {
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
     private MeterType meterType;
     private Double rate;
     private Double standingCharge;

@@ -2,18 +2,17 @@ package com.soumen.simplebilling.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.soumen.simplebilling.model.MeterType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
-@Entity
+@Document
 @Data
 public class MeterReadingHistory {
     @Id
-    @GeneratedValue
+
     private Long id;
     private MeterType meterType;
     private Integer meterReadingValue;

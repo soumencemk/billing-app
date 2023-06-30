@@ -13,7 +13,7 @@ import java.util.Date;
 public class MeterReadingHistory {
     @Id
 
-    private Long id;
+    private String id;
     private MeterType meterType;
     private Integer meterReadingValue;
     @JsonFormat(pattern = "yyyy-MM-dd")

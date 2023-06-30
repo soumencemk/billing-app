@@ -19,8 +19,8 @@ public class AppInit {
             log.info("Initialising Rates");
             Rates electric = new Rates();
             electric.setMeterType(MeterType.ELECTRIC);
-            electric.setRate(0.17d);
-            electric.setStandingCharge(0.30d);
+            electric.setRate(0.34d);
+            electric.setStandingCharge(0.45d);
             Rates gas = new Rates();
             gas.setMeterType(MeterType.GAS);
             gas.setRate(0.1045d);

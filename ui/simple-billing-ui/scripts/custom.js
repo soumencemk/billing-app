@@ -1,4 +1,4 @@
-const hostPort = "http://validator-tests:9191/";
+const hostPort = "http://localhost:8080/";
 
 function calculateBills() {
     $.ajax({

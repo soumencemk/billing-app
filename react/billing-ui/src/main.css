@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body,
+html {
+  font-family: "Roboto", cursive;
+}
+.nav-item:hover {
+  box-shadow: 0 0 11px rgba(145, 182, 234, 0.429); 
+}

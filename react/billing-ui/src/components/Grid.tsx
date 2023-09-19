@@ -12,8 +12,7 @@ interface GridProps {
 function Grid({ columns, data }: GridProps) {
   return (
     <div>
-      <DataTable
-        className="shadow border"
+      <DataTable        
         columns={columns}
         data={data}
         pagination

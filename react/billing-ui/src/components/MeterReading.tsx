@@ -4,7 +4,8 @@ import Grid from "./Grid";
 import { Book } from "react-bootstrap-icons";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
-const METER_READING_URL = "http://localhost:9191/simple-billing/reading/all";
+const METER_READING_URL =
+import.meta.env.VITE_API_URL + "/simple-billing/reading/all";
 const columns = [
   {
     name: "ID",
@@ -50,7 +51,10 @@ function MeterReading() {
         </div>
         <div className="card-body">
           {readings.length == 0 && <Loading />}
-          <Link to="/NewMeterReading" className="btn btn-outline-primary btn-sm">
+          <Link
+            to="/NewMeterReading"
+            className="btn btn-outline-primary btn-sm shadow"
+          >
             New Reading
           </Link>
           <Grid columns={columns} data={readings}></Grid>

@@ -4,7 +4,7 @@ import Grid from "./Grid";
 import { Bank } from "react-bootstrap-icons";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
-const PAYMENT_URL = "http://localhost:9191/simple-billing/payment";
+const PAYMENT_URL = import.meta.env.VITE_API_URL + "/simple-billing/payment";
 const columns = [
   {
     name: "ID",
@@ -41,7 +41,7 @@ function Payment() {
         </div>
         <div className="card-body">
         {payment.length == 0 && <Loading />}
-        <Link to="/NewPayment" className="btn btn-outline-primary btn-sm">
+        <Link to="/NewPayment" className="btn btn-outline-primary btn-sm shadow">
             New Payment
           </Link>
           <Grid columns={columns} data={payment}></Grid>

@@ -11,14 +11,17 @@ import {
 } from "react-bootstrap-icons";
 import Loading from "./Loading";
 
-const BILLS_ENDPOINT = "http://localhost:9191/simple-billing/bill/current";
+const BILLS_ENDPOINT =
+  import.meta.env.VITE_API_URL + "/simple-billing/bill/current";
 const PREDICTION_ENDPOINT =
-  "http://localhost:9191/simple-billing/bill/monthPredict";
+  import.meta.env.VITE_API_URL + "/simple-billing/bill/monthPredict";
 
 function Bills() {
   const [bills, setBills] = useState([]);
   const [avgPerMonth, setAvgPerMonth] = useState([]);
   useEffect(() => {
+    console.log(import.meta.env.MODE);
+    console.log(import.meta.env.VITE_API_URL);
     axios.get(BILLS_ENDPOINT).then((response) => {
       setBills(response.data);
     });
@@ -94,7 +97,9 @@ function Bills() {
                             <td>
                               <ChatLeftText /> MESSAGE
                             </td>
-                            <td className="mark"><b>{bill.bill.message}</b></td>
+                            <td className="mark">
+                              <b>{bill.bill.message}</b>
+                            </td>
                           </tr>
                           <tfoot>
                             <tr className="table-success">

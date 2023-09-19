@@ -5,7 +5,7 @@ import { ClockHistory } from "react-bootstrap-icons";
 import Loading from "./Loading";
 
 const HISTORICAL_READINGS_URL =
-  "http://localhost:9191/simple-billing/reading/historical";
+  import.meta.env.VITE_API_URL + "/simple-billing/reading/historical";
 const columns = [
   {
     name: "Meter Type",

@@ -4,7 +4,7 @@ import Grid from "./Grid";
 import { Tag } from "react-bootstrap-icons";
 import Loading from "./Loading";
 
-const RATES_URL = "http://localhost:9191/simple-billing/rates";
+const RATES_URL = import.meta.env.VITE_API_URL + "/simple-billing/rates";
 
 const columns = [
   {

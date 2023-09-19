@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Book } from "react-bootstrap-icons";
 
 const NEW_METER_READING_URL =
-  "http://localhost:9191/simple-billing/reading/submit";
+import.meta.env.VITE_API_URL + "/simple-billing/reading/submit";
 
 function NewMeterReading() {
   const [formValue, setformValue] = useState({
@@ -28,11 +28,6 @@ function NewMeterReading() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("meterType", formValue.meterType);
-    formData.append("readingDate", formValue.readingDate);
-    formData.append("readingValue", formValue.readingValue);
-    formData.append("isStartingReading", formValue.isStartingReading);
     axios
       .post(NEW_METER_READING_URL, formValue)
       .then((response) => {
